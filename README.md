@@ -54,7 +54,9 @@ ORDER BY Total_Revenue DESC;
 Insight: Shows which countries drive the highest store revenue useful for expansion planning.
 
 🧑‍💼 EMPLOYEE MANAGEMENT DATASET
+
 🏢 1. Employee & Department Overview
+
 SELECT employees.first_name AS First_Name, employees.last_name AS Last_Name,
 departments.department_name AS Department_Name
 FROM tutorial.employees
@@ -64,6 +66,7 @@ ON employees.department_id = departments.department_id;
 Insight: Combines employee and department details for easy organizational mapping.
 
 💸 2. Average Salary by Department
+
 SELECT departments.department_name AS Department, AVG(employees.salary) AS Salary
 FROM tutorial.employees
 JOIN tutorial.departments
@@ -73,6 +76,7 @@ GROUP BY Department;
 Insight: Highlights departments with the highest average salaries
 
 ⏰ 3. Recently Hired in IT & Marketing
+
 SELECT employees.first_name AS Name, departments.department_name AS Department,
 employees.hire_date AS Hired_Date
 FROM tutorial.employees
@@ -84,6 +88,7 @@ AND hire_date > '2020-12-31';
 Insight: Identifies recent recruits for trend analysis in tech and marketing teams.
 
 💼 4. Total Salary Expense by Department
+
 SELECT departments.department_name AS Department, SUM(employees.salary) AS Total_Salary_Expense
 FROM tutorial.employees
 JOIN tutorial.departments
@@ -94,6 +99,7 @@ ORDER BY Total_Salary_Expense DESC;
 Insight: Reveals which departments consume the most payroll resources.
 
 💎 5. Top 5 Highest Paid Employees
+
 SELECT departments.department_name AS Department, employees.first_name AS Name, employees.salary AS Salary
 FROM tutorial.employees
 JOIN tutorial.departments
@@ -119,6 +125,12 @@ Visual Studio Code
 GitHub for version control and portfolio documentation
 
 🚀 Author
+
+
 👩‍💻 Omoyeni Edith
+
+
 Passionate about turning raw data into clear, actionable insights.
+
+
 📬 LinkedIn https://www.linkedin.com/in/omoyeni-edith-0385a1275?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app
