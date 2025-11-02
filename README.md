@@ -15,6 +15,7 @@ These exercises helped strengthen my skills in **aggregation, joins, subqueries,
 SELECT Product, SUM(Unit_Price * Quantity) AS Revenue
 FROM tutorial.flenks_store
 GROUP BY Product;
+
 Insight: This query calculates the total revenue for each product, identifying top-performing items in the store.
 
 👥 2. Top 5 Customers by Spending
@@ -23,6 +24,7 @@ FROM tutorial.flenks_store
 GROUP BY Customer_Name
 ORDER BY Total_Spending DESC
 LIMIT 5;
+
 Insight: Helps pinpoint high value customers and informs loyalty strategies
 
 🏷️ 3. Sales Category by Order
@@ -33,12 +35,14 @@ CASE
   ELSE 'Low Sale' 
 END AS Sales_Category
 FROM tutorial.flenks_store;
+
 Insight: Categorizes each sale into High, Medium, or Low, simplifying trend analysis
 
 💰 4. Products Above Average Price
 SELECT Product, Unit_Price
 FROM tutorial.flenks_store
 WHERE Unit_Price > (SELECT AVG(Unit_Price) FROM tutorial.flenks_store);
+
 Insight: Highlights premium products priced above the average market rate
 
 🌍 5. Total Revenue by Country
@@ -46,6 +50,7 @@ SELECT Country, SUM(Unit_Price * Quantity) AS Total_Revenue
 FROM tutorial.flenks_store
 GROUP BY Country
 ORDER BY Total_Revenue DESC;
+
 Insight: Shows which countries drive the highest store revenue useful for expansion planning.
 
 🧑‍💼 EMPLOYEE MANAGEMENT DATASET
@@ -55,6 +60,7 @@ departments.department_name AS Department_Name
 FROM tutorial.employees
 JOIN tutorial.departments
 ON employees.department_id = departments.department_id;
+
 Insight: Combines employee and department details for easy organizational mapping.
 
 💸 2. Average Salary by Department
@@ -63,6 +69,7 @@ FROM tutorial.employees
 JOIN tutorial.departments
 ON employees.department_id = departments.department_id
 GROUP BY Department;
+
 Insight: Highlights departments with the highest average salaries
 
 ⏰ 3. Recently Hired in IT & Marketing
@@ -73,6 +80,7 @@ JOIN tutorial.departments
 ON employees.department_id = departments.department_id
 WHERE (department_name = 'IT' OR department_name = 'Marketing') 
 AND hire_date > '2020-12-31';
+
 Insight: Identifies recent recruits for trend analysis in tech and marketing teams.
 
 💼 4. Total Salary Expense by Department
@@ -82,6 +90,7 @@ JOIN tutorial.departments
 ON employees.department_id = departments.department_id
 GROUP BY Department
 ORDER BY Total_Salary_Expense DESC;
+
 Insight: Reveals which departments consume the most payroll resources.
 
 💎 5. Top 5 Highest Paid Employees
@@ -91,6 +100,7 @@ JOIN tutorial.departments
 ON employees.department_id = departments.department_id
 ORDER BY Salary DESC
 LIMIT 5;
+
 Insight: Lists the top earners across departments, useful for HR analysis.
 
 🧩 Key Skills Demonstrated
